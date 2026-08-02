@@ -2,7 +2,11 @@ import Image from "next/image";
 
 const instructors = [
   { name: "Kimberly Houli", role: "Artistic Director & Owner", image: "/images/Kim.jpg" },
-  { name: "Jennifer and Jessica Hine", role: "Hip Hop Teachers", image: null },
+  {
+    name: "Jennifer and Jessica Hine",
+    role: "Hip Hop Teachers",
+    image: "/images/JessJenn-Pic-crop.jpg",
+  },
   { name: "Jessica Totaro", role: "Dance Teacher", image: "/images/Jess.jpg" },
   {
     name: "Dana Ingram",
@@ -12,10 +16,9 @@ const instructors = [
   {
     name: "Kathleen Pearlburg",
     role: "Dance Teacher",
-    image: "/images/KathyHeadShot.jpg",
-    imagePosition: "75% 15%",
+    image: "/images/KathyHeadShot-crop.jpg",
   },
-  { name: "Megan Theobald", role: "Dance Teacher", image: null },
+  { name: "Megan Theobald", role: "Dance Teacher", image: "/images/megan.jpg" },
 ];
 
 const facilityPhotos = [
@@ -42,21 +45,15 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         {instructors.map((i) => (
           <div key={i.name} className="text-center">
-            {i.image ? (
-              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
-                <Image
-                  src={i.image}
-                  alt={i.name}
-                  fill
-                  sizes="128px"
-                  className="object-cover"
-                  style={i.imagePosition ? { objectPosition: i.imagePosition } : undefined}
-                />
-              </div>
-            ) : (
-              /* TODO: swap in real instructor photo */
-              <div className="w-32 h-32 mx-auto rounded-full bg-joy-blush mb-4" />
-            )}
+            <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+              <Image
+                src={i.image}
+                alt={i.name}
+                fill
+                sizes="128px"
+                className="object-cover"
+              />
+            </div>
             <h3 className="font-semibold">{i.name}</h3>
             <p className="text-sm text-joy-charcoal/70">{i.role}</p>
           </div>
