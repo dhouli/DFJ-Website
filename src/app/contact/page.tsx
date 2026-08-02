@@ -24,9 +24,16 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* TODO: embed real Google Map */}
-      <div className="w-full h-80 bg-joy-blush rounded-xl flex items-center justify-center text-sm text-joy-charcoal/60">
-        TODO: embed map
+      <div className="w-full h-80 rounded-xl border border-joy-blush overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps?q=1025+NJ-70+%232,+Brielle,+NJ+08730&output=embed"
+          title="Dance For Joy studio location map"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     </div>
   );

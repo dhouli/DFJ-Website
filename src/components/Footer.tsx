@@ -31,10 +31,9 @@ export default function Footer() {
 
         <div>
           <h4 className="font-semibold mb-3">Follow Us</h4>
-          {/* Replace with real profile URLs before launch */}
           <ul className="space-y-2">
-            <li><a href="https://facebook.com/REPLACE_ME" target="_blank" rel="noreferrer">Facebook</a></li>
-            <li><a href="https://instagram.com/REPLACE_ME" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/danceforjoynj/" target="_blank" rel="noreferrer">Facebook</a></li>
+            <li><a href="https://www.instagram.com/danceforjoynj/" target="_blank" rel="noreferrer">Instagram</a></li>
           </ul>
         </div>
       </div>
