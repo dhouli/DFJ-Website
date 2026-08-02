@@ -48,10 +48,11 @@ export default function AboutPage() {
             wants it to feel even more authentic. */}
         <div className="max-w-2xl space-y-4 text-joy-charcoal/90">
           <p>
-            Dance For Joy started with a simple idea: every child deserves a
-            place where they can move, grow, and feel proud of who they&rsquo;re
-            becoming. We&rsquo;ve built a studio where technique matters, but so
-            does the way a five-year-old feels walking into her first ballet
+            At the heart of Dance For Joy is a simple idea: every child
+            deserves a place where they can move, grow, and feel proud of who
+            they&rsquo;re becoming. Since taking the reins, Kim has shaped
+            Dance For Joy into a studio where technique matters, but so does
+            the way a five-year-old feels walking into her first ballet
             class, or the way a teenager finds her voice through a solo she
             helped choreograph.
           </p>

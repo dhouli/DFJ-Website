@@ -97,10 +97,18 @@ export default function Home() {
               Meet Kim
             </h2>
             <p className="text-sm">
-              {/* TODO: replace with Kim's real founder note */}
-              A short, personal note from Kim about why she started Dance For
-              Joy and what she wants every family to feel walking through the
-              door.
+              {/* Draft copy in Kim's voice, based on what we know about the
+                  studio — worth her personalizing with a real detail or
+                  anecdote if she wants it to feel even more authentic. */}
+              Dance has been my passion for as long as I can remember, and
+              taking the reins at Dance For Joy let me build something around
+              what I love most: watching kids grow, both as dancers and as
+              people. There&rsquo;s nothing better than seeing a student walk
+              in nervous for her first class and walk out a year later
+              dancing with confidence she didn&rsquo;t know she had. Whether
+              your dancer is here for one class a week or training with our
+              company team, I want you to walk through our doors and feel
+              like you found your people.
             </p>
           </div>
         </div>
