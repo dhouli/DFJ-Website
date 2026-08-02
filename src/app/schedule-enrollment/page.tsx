@@ -1,6 +1,7 @@
+import Link from "next/link";
 import ScheduleTabs from "@/components/ScheduleTabs";
 import TuitionCalculator from "@/components/TuitionCalculator";
-import { tuitionRates, tuitionPolicies, keyDates } from "@/data/schedule";
+import { tuitionRates, tuitionPolicies } from "@/data/schedule";
 
 export default function ScheduleEnrollmentPage() {
   return (
@@ -9,13 +10,20 @@ export default function ScheduleEnrollmentPage() {
         Schedule &amp; Enrollment
       </h1>
       <p className="max-w-2xl mb-12">
-        Everything you need to enroll: current class schedule, key dates, and
-        tuition. Consolidated here instead of split across separate pages.
+        Everything you need to enroll: current class schedule and tuition.
+        Looking for recital dates, auditions, or closures? Check our{" "}
+        <Link
+          href="/events"
+          className="text-joy-pink underline hover:text-joy-plum transition-colors"
+        >
+          Events
+        </Link>{" "}
+        calendar.
       </p>
 
       <section className="mb-20">
         <h2 className="font-display text-2xl text-joy-pink mb-6">
-          Class Schedule
+          Fall 2026 Class Schedule
         </h2>
         <ScheduleTabs />
       </section>
@@ -75,20 +83,6 @@ export default function ScheduleEnrollmentPage() {
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="mb-20">
-        <h2 className="font-display text-2xl text-joy-pink mb-6">
-          Key Dates 2026&ndash;2027
-        </h2>
-        <ol className="border-l-2 border-joy-cyan pl-6 space-y-6">
-          {keyDates.map((k) => (
-            <li key={k.date + k.description}>
-              <p className="text-sm font-semibold text-joy-plum">{k.date}</p>
-              <p className="text-sm text-joy-charcoal/80">{k.description}</p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { keyDates } from "@/data/schedule";
 
 const galleryPhotos = [
   { src: "/images/IMG_9057.jpg", alt: "Company dancers backstage in costume" },
@@ -11,9 +12,24 @@ export default function EventsPage() {
     <div className="mx-auto max-w-6xl px-6 py-20">
       <h1 className="font-display text-4xl text-joy-plum mb-6">Events</h1>
       <p className="max-w-2xl mb-12">
-        {/* TODO: pull real upcoming events (recitals, showcases, workshops) */}
-        TODO: list upcoming recitals, showcases, and workshops.
+        Everything on the Dance For Joy calendar this season &mdash;
+        closures, auditions, competitions, and our spring recital &mdash; all
+        in one chronological place.
       </p>
+
+      <section className="mb-20">
+        <h2 className="font-display text-2xl text-joy-pink mb-6">
+          Key Dates 2026&ndash;2027
+        </h2>
+        <ol className="border-l-2 border-joy-cyan pl-6 space-y-6">
+          {keyDates.map((k) => (
+            <li key={k.date + k.description}>
+              <p className="text-sm font-semibold text-joy-plum">{k.date}</p>
+              <p className="text-sm text-joy-charcoal/80">{k.description}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <h2 className="font-display text-2xl text-joy-pink mb-6">
         Recent Recitals &amp; Showcases
