@@ -21,6 +21,35 @@ const instructors = [
   { name: "Megan Theobald", role: "Dance Teacher", image: "/images/megan.jpg" },
 ];
 
+const lifeAtDfjPhotos = [
+  {
+    src: "/images/mcr-40-scaled-e1729342248287.jpg",
+    alt: "Company dancers posing together outside the ornate Asbury Park Carousel House",
+    feature: true,
+  },
+  {
+    src: "/images/DSC_9565-1-scaled.jpg",
+    alt: "Young dancers posing among sunflowers at the Historic Village at Allaire",
+    tall: true,
+  },
+  {
+    src: "/images/company_dfj_2.jpg",
+    alt: "Company dancers lined up in matching Dance For Joy jackets in the studio",
+  },
+  {
+    src: "/images/IMG_3432.jpg",
+    alt: "Dancers in sparkling teal costumes performing on stage under a flowing fabric prop",
+  },
+  {
+    src: "/images/Slider2-1.jpg",
+    alt: "Two dancers on the beach reaching toward the sky, framed by a gold picture frame prop",
+  },
+  {
+    src: "/images/28235104_10109309685432649_1530150601109565223_o.jpg",
+    alt: "A dancer striking a dramatic pose in front of a large bird mural",
+  },
+];
+
 const facilityPhotos = [
   { src: "/images/picture13.jpg", alt: "Dance studio with barre and framed photography" },
   { src: "/images/picture10.jpg", alt: "Spacious studio with mirrored wall and viewing window" },
@@ -90,6 +119,40 @@ export default function AboutPage() {
             </div>
             <h3 className="font-semibold">{i.name}</h3>
             <p className="text-sm text-joy-charcoal/70">{i.role}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="font-display text-2xl text-joy-pink mb-6">
+        Capturing the Joy of Dance
+      </h2>
+      <p className="max-w-2xl mb-8">
+        From the studio to the stage to the beach at sunrise, these are the
+        moments that make Dance For Joy what it is.
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[160px] md:auto-rows-[200px] mb-20">
+        {lifeAtDfjPhotos.map((photo) => (
+          <div
+            key={photo.src}
+            className={`relative rounded-xl overflow-hidden ${
+              photo.feature
+                ? "col-span-2 row-span-2 md:col-span-4"
+                : photo.tall
+                  ? "row-span-2 md:col-span-2"
+                  : ""
+            }`}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes={
+                photo.feature
+                  ? "100vw"
+                  : "(min-width: 768px) 50vw, 100vw"
+              }
+              className="object-cover"
+            />
           </div>
         ))}
       </div>
