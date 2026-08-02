@@ -15,7 +15,7 @@ export default function EventsPage() {
         TODO: list upcoming recitals, showcases, and workshops.
       </p>
 
-      <h2 className="font-display text-2xl text-joy-rose mb-6">
+      <h2 className="font-display text-2xl text-joy-pink mb-6">
         Recent Recitals &amp; Showcases
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

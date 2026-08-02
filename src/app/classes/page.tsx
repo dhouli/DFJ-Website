@@ -52,7 +52,7 @@ export default function ClassesPage() {
       {ageGroups.map((group) => (
         <div key={group.range} className="mb-14">
           <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
-            <h2 className="font-display text-2xl text-joy-rose">
+            <h2 className="font-display text-2xl text-joy-pink">
               {group.range}
             </h2>
             {group.image && (
@@ -71,7 +71,7 @@ export default function ClassesPage() {
             {group.classes.map((c) => (
               <div
                 key={c.name}
-                className="rounded-xl border border-joy-blush p-6 bg-white"
+                className="rounded-xl border border-joy-blush p-6 bg-white hover:border-joy-cyan transition-colors"
               >
                 <h3 className="font-semibold mb-2">{c.name}</h3>
                 <p className="text-sm text-joy-charcoal/80">{c.desc}</p>

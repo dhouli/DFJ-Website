@@ -10,7 +10,7 @@ export default function ScheduleEnrollmentPage() {
       </p>
 
       <section className="mb-16">
-        <h2 className="font-display text-2xl text-joy-rose mb-4">
+        <h2 className="font-display text-2xl text-joy-pink mb-4">
           Class Schedule
         </h2>
         {/* TODO: embed filterable schedule (by age/day) */}
@@ -20,7 +20,7 @@ export default function ScheduleEnrollmentPage() {
       </section>
 
       <section className="mb-16">
-        <h2 className="font-display text-2xl text-joy-rose mb-4">
+        <h2 className="font-display text-2xl text-joy-pink mb-4">
           Key Dates
         </h2>
         {/* TODO: embed dates-at-a-glance calendar */}
@@ -30,7 +30,7 @@ export default function ScheduleEnrollmentPage() {
       </section>
 
       <section className="mb-16">
-        <h2 className="font-display text-2xl text-joy-rose mb-4">Tuition</h2>
+        <h2 className="font-display text-2xl text-joy-pink mb-4">Tuition</h2>
         {/* TODO: currently missing from old site — needs real pricing */}
         <p className="text-sm text-joy-charcoal/70">
           TODO: add tuition/pricing info — not currently published anywhere.
@@ -38,13 +38,13 @@ export default function ScheduleEnrollmentPage() {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl text-joy-rose mb-4">
+        <h2 className="font-display text-2xl text-joy-pink mb-4">
           Ready to Register?
         </h2>
         {/* TODO: confirm registration platform — embedded booking vs external link */}
         <a
           href="#"
-          className="inline-block rounded-full bg-joy-rose px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
+          className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
         >
           Register for Classes
         </a>

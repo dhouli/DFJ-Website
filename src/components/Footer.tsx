@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-joy-plum text-joy-cream">
+    <footer className="bg-joy-plum text-joy-cream border-t-4 border-joy-cyan">
       <div className="mx-auto max-w-6xl px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
         <div>
           <h3 className="font-display text-lg mb-3">Dance For Joy</h3>

@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <p className="font-body uppercase tracking-widest text-joy-rose text-sm mb-4">
+          <p className="font-body uppercase tracking-widest text-joy-pink text-sm mb-4">
             Welcome to Dance For Joy
           </p>
           <h1 className="font-display text-5xl md:text-6xl text-joy-plum mb-6">
@@ -19,7 +19,7 @@ export default function Home() {
           </p>
           <Link
             href="/schedule-enrollment"
-            className="inline-block rounded-full bg-joy-rose px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
+            className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
           >
             Register for Classes
           </Link>
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="bg-joy-blush py-8">
+      <section className="bg-joy-cyan/10 py-8">
         <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm font-semibold text-joy-plum">
           <div>Brielle, NJ Studio</div>
           <div>Ages 3 &amp; Up</div>
@@ -116,7 +116,7 @@ export default function Home() {
         </p>
         <Link
           href="/schedule-enrollment"
-          className="inline-block rounded-full bg-joy-rose px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
+          className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
         >
           Enroll Now
         </Link>

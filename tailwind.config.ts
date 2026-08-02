@@ -9,14 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm, welcoming palette — placeholder values, swap once brand colors are finalized
+        // Sampled from the DFJ logo (FinalLogoDFJTransparent-Black-background2.jpg):
+        // hot pink, cyan, and purple panels, used as accents against warm, light neutrals.
         joy: {
-          blush: "#F7E6E0",
-          rose: "#E8A0A0",
-          plum: "#7A4B5C",
-          cream: "#FFFAF3",
-          gold: "#E3B23C",
-          charcoal: "#2E2A28",
+          pink: "#E0187A",
+          cyan: "#14A0C7",
+          plum: "#5B1A5C",
+          blush: "#FBE7F0",
+          cream: "#FFFBF5",
+          charcoal: "#2B2430",
         },
       },
       fontFamily: {

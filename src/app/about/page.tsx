@@ -39,7 +39,7 @@ export default function AboutPage() {
         Our mission and vision, rewritten in Kim&rsquo;s own words.
       </p>
 
-      <h2 className="font-display text-2xl text-joy-rose mb-8">
+      <h2 className="font-display text-2xl text-joy-pink mb-8">
         Our Passionate Dance Educators
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -60,7 +60,7 @@ export default function AboutPage() {
         ))}
       </div>
 
-      <h2 className="font-display text-2xl text-joy-rose mb-6">
+      <h2 className="font-display text-2xl text-joy-pink mb-6">
         Our Facility
       </h2>
       <p className="max-w-2xl mb-8">
