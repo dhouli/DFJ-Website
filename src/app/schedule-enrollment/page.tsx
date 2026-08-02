@@ -89,13 +89,36 @@ export default function ScheduleEnrollmentPage() {
         <h2 className="font-display text-2xl text-joy-pink mb-4">
           Ready to Register?
         </h2>
-        {/* TODO: confirm registration platform — embedded booking vs external link */}
-        <a
-          href="#"
-          className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
-        >
-          Register for Classes
-        </a>
+        <p className="text-sm text-joy-charcoal/80 mb-2">
+          New to Dance For Joy?{" "}
+          <a
+            href="https://app.thestudiodirector.com/danceforjoynj/portal.sd?page=Register"
+            target="_blank"
+            rel="noreferrer"
+            className="text-joy-pink underline hover:text-joy-plum transition-colors font-semibold"
+          >
+            Register here.
+          </a>
+        </p>
+        <p className="text-sm text-joy-charcoal/70 mb-6 max-w-2xl">
+          Please confirm your dancer&rsquo;s level and placement with Dance
+          For Joy before registering for a class.
+        </p>
+
+        <div className="w-full h-[800px] rounded-xl border border-joy-blush overflow-hidden mb-4">
+          <iframe
+            src="https://app.thestudiodirector.com/danceforjoynj/portal.sd?page=Login"
+            title="Dance For Joy registration portal"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+          />
+        </div>
+
+        <p className="text-sm text-joy-charcoal/70">
+          Having trouble? Call us at (732) 223-5336.
+        </p>
       </section>
     </div>
   );
