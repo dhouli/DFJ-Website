@@ -18,7 +18,7 @@ export default function Home() {
             every step builds confidence and joy.
           </p>
           <Link
-            href="/schedule-enrollment"
+            href="/schedule-enrollment#register"
             className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
           >
             Register for Classes
@@ -123,7 +123,7 @@ export default function Home() {
           Contact us to learn more about our classes or to enroll today.
         </p>
         <Link
-          href="/schedule-enrollment"
+          href="/schedule-enrollment#register"
           className="inline-block rounded-full bg-joy-pink px-8 py-3 text-white font-semibold hover:bg-joy-plum transition-colors"
         >
           Enroll Now

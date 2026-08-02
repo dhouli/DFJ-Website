@@ -38,7 +38,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="/schedule-enrollment"
+          href="/schedule-enrollment#register"
           className="rounded-full bg-joy-pink px-5 py-2 text-sm font-semibold text-white hover:bg-joy-plum transition-colors"
         >
           Register Now

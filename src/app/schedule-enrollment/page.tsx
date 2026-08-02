@@ -85,7 +85,7 @@ export default function ScheduleEnrollmentPage() {
         </div>
       </section>
 
-      <section>
+      <section id="register">
         <h2 className="font-display text-2xl text-joy-pink mb-4">
           Ready to Register?
         </h2>
