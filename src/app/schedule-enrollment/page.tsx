@@ -1,4 +1,5 @@
 import ScheduleTabs from "@/components/ScheduleTabs";
+import TuitionCalculator from "@/components/TuitionCalculator";
 import { tuitionRates, tuitionPolicies, keyDates } from "@/data/schedule";
 
 export default function ScheduleEnrollmentPage() {
@@ -24,6 +25,17 @@ export default function ScheduleEnrollmentPage() {
         <p className="text-sm text-joy-charcoal/70 mb-6 max-w-2xl">
           Monthly tuition is billed in 9 equal payments from September through
           May, based on a 29-week class schedule, per student.
+        </p>
+
+        <h3 className="font-display text-xl text-joy-plum mb-4">
+          Build Your Weekly Schedule
+        </h3>
+        <div className="rounded-xl border border-joy-blush bg-white p-6 mb-10">
+          <TuitionCalculator />
+        </div>
+
+        <p className="text-sm text-joy-charcoal/70 mb-4 max-w-2xl">
+          Or look up your total weekly class time directly:
         </p>
         <div className="overflow-x-auto rounded-xl border border-joy-blush">
           <table className="w-full text-sm">

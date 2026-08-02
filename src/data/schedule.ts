@@ -229,6 +229,41 @@ export const tuitionRates: TuitionRate[] = [
   { duration: "Family Unlimited", monthly: "$712" },
 ];
 
+// Minutes equivalent for each tuition tier, used to total up weekly class
+// time and find the matching tier. Unlimited tiers have no ceiling, so any
+// total exceeding the highest hourly tier (8 hr) naturally rolls up to them.
+export const tuitionTierMinutes: Record<string, number> = {
+  "45 min": 45,
+  "1 hr": 60,
+  "1 hr 15 min": 75,
+  "1 hr 30 min": 90,
+  "1 hr 45 min": 105,
+  "2 hr": 120,
+  "2 hr 15 min": 135,
+  "2 hr 30 min": 150,
+  "2 hr 45 min": 165,
+  "3 hr": 180,
+  "3 hr 30 min": 210,
+  "3 hr 45 min": 225,
+  "4 hr": 240,
+  "4 hr 30 min": 270,
+  "5 hr": 300,
+  "5 hr 30 min": 330,
+  "6 hr": 360,
+  "6 hr 30 min": 390,
+  "7 hr": 420,
+  "7 hr 30 min": 450,
+  "8 hr": 480,
+  Unlimited: Infinity,
+  "Family Unlimited": Infinity,
+};
+
+// Selectable per-class durations for the tuition calculator — the same
+// lengths as the tuition table, minus the two whole-schedule tiers.
+export const classDurationOptions: string[] = tuitionRates
+  .map((r) => r.duration)
+  .filter((d) => d !== "Unlimited" && d !== "Family Unlimited");
+
 export const tuitionPolicies: string[] = [
   "Ballet is required to enroll in Lyrical, Jazz, or Contemporary classes.",
   "Tap, Hip Hop, and Acro do not require ballet.",
