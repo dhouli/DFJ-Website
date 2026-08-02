@@ -1,10 +1,28 @@
+import Image from "next/image";
+
 const instructors = [
-  { name: "Kimberly Houli", role: "Artistic Director & Owner" },
-  { name: "Jennifer and Jessica Hine", role: "Hip Hop Teachers" },
-  { name: "Jessica Totaro", role: "Dance Teacher" },
-  { name: "Dana Ingram", role: "Dance Teacher & Co-Company Director, A Step Above Dance Company" },
-  { name: "Kathleen Pearlburg", role: "Dance Teacher" },
-  { name: "Megan Theobald", role: "Dance Teacher" },
+  { name: "Kimberly Houli", role: "Artistic Director & Owner", image: "/images/Kim.jpg" },
+  { name: "Jennifer and Jessica Hine", role: "Hip Hop Teachers", image: null },
+  { name: "Jessica Totaro", role: "Dance Teacher", image: "/images/Jess.jpg" },
+  {
+    name: "Dana Ingram",
+    role: "Dance Teacher & Co-Company Director, A Step Above Dance Company",
+    image: "/images/Dana.png",
+  },
+  {
+    name: "Kathleen Pearlburg",
+    role: "Dance Teacher",
+    image: "/images/KathyHeadShot.jpg",
+    imagePosition: "75% 15%",
+  },
+  { name: "Megan Theobald", role: "Dance Teacher", image: null },
+];
+
+const facilityPhotos = [
+  { src: "/images/picture13.jpg", alt: "Dance studio with barre and framed photography" },
+  { src: "/images/picture10.jpg", alt: "Spacious studio with mirrored wall and viewing window" },
+  { src: "/images/picture16-1.jpg", alt: "Studio with barre and framed dance photography" },
+  { src: "/images/picture15-scaled.jpg", alt: "Acro and tumbling room with mats and barre" },
 ];
 
 export default function AboutPage() {
@@ -24,8 +42,21 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
         {instructors.map((i) => (
           <div key={i.name} className="text-center">
-            {/* TODO: swap in real instructor photo */}
-            <div className="w-32 h-32 mx-auto rounded-full bg-joy-blush mb-4" />
+            {i.image ? (
+              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+                <Image
+                  src={i.image}
+                  alt={i.name}
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                  style={i.imagePosition ? { objectPosition: i.imagePosition } : undefined}
+                />
+              </div>
+            ) : (
+              /* TODO: swap in real instructor photo */
+              <div className="w-32 h-32 mx-auto rounded-full bg-joy-blush mb-4" />
+            )}
             <h3 className="font-semibold">{i.name}</h3>
             <p className="text-sm text-joy-charcoal/70">{i.role}</p>
           </div>
@@ -35,11 +66,26 @@ export default function AboutPage() {
       <h2 className="font-display text-2xl text-joy-rose mb-6">
         Our Facility
       </h2>
-      <p className="max-w-2xl mb-4">
+      <p className="max-w-2xl mb-8">
         Raised Marley floors, parent viewing windows, and spacious studios
         designed for every dancer to move freely and safely.
       </p>
-      {/* TODO: real facility photo grid from studio library */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {facilityPhotos.map((photo) => (
+          <div
+            key={photo.src}
+            className="relative aspect-square rounded-xl overflow-hidden"
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

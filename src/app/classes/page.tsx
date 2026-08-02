@@ -1,6 +1,12 @@
+import Image from "next/image";
+
 const ageGroups = [
   {
     range: "Ages 3–5",
+    image: {
+      src: "/images/1EBA83F2-D9D9-444C-8F05-2F185C0CDD6F-scaled.jpeg",
+      alt: "Pre-Ballet dancers in pink leotards at the barre",
+    },
     classes: [
       { name: "Pre-Ballet", desc: "TODO: rewrite from template copy" },
       { name: "Try Tap & Hip Hop", desc: "TODO: rewrite from template copy" },
@@ -8,6 +14,10 @@ const ageGroups = [
   },
   {
     range: "Ages 6–10",
+    image: {
+      src: "/images/IMG_3970.jpg",
+      alt: "Dancer stretching in an acro class",
+    },
     classes: [
       { name: "Ballet", desc: "TODO" },
       { name: "Jazz", desc: "TODO" },
@@ -19,6 +29,7 @@ const ageGroups = [
   },
   {
     range: "Ages 10+",
+    image: null,
     classes: [
       { name: "Contemporary", desc: "TODO" },
       { name: "Musical Theater", desc: "TODO" },
@@ -40,9 +51,22 @@ export default function ClassesPage() {
 
       {ageGroups.map((group) => (
         <div key={group.range} className="mb-14">
-          <h2 className="font-display text-2xl text-joy-rose mb-6">
-            {group.range}
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6">
+            <h2 className="font-display text-2xl text-joy-rose">
+              {group.range}
+            </h2>
+            {group.image && (
+              <div className="relative w-full md:w-56 h-36 rounded-xl overflow-hidden shrink-0">
+                <Image
+                  src={group.image.src}
+                  alt={group.image.alt}
+                  fill
+                  sizes="(min-width: 768px) 224px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {group.classes.map((c) => (
               <div
