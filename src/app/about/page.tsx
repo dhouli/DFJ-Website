@@ -34,10 +34,43 @@ export default function AboutPage() {
       <h1 className="font-display text-4xl text-joy-plum mb-6">
         Empowering Dancers Through Joyful Movement
       </h1>
-      <p className="max-w-2xl mb-16">
-        {/* TODO: rewrite mission statement in DFJ's real voice, not template copy */}
-        Our mission and vision, rewritten in Kim&rsquo;s own words.
+      <p className="max-w-2xl mb-12 text-lg text-joy-charcoal/80">
+        Building confidence, one step at a time, since we opened our doors in
+        Brielle.
       </p>
+
+      <section className="mb-20">
+        <h2 className="font-display text-2xl text-joy-pink mb-6">
+          Our Mission
+        </h2>
+        {/* Draft copy in Kim's voice, based on what we know about the studio —
+            worth her personalizing with a real detail or anecdote if she
+            wants it to feel even more authentic. */}
+        <div className="max-w-2xl space-y-4 text-joy-charcoal/90">
+          <p>
+            Dance For Joy started with a simple idea: every child deserves a
+            place where they can move, grow, and feel proud of who they&rsquo;re
+            becoming. We&rsquo;ve built a studio where technique matters, but so
+            does the way a five-year-old feels walking into her first ballet
+            class, or the way a teenager finds her voice through a solo she
+            helped choreograph.
+          </p>
+          <p>
+            We keep our classes age-appropriate on purpose &mdash; the music,
+            the costumes, the choreography &mdash; because we believe
+            confidence is built layer by layer, not rushed. Our instructors
+            know every student by name, and our studio, with its raised
+            Marley floors and parent viewing windows, is designed so families
+            can be part of that journey every step of the way.
+          </p>
+          <p>
+            Whether your dancer is taking her first Pre-Ballet class or
+            preparing for competition with our company team, our goal is the
+            same: help her fall in love with movement, and walk out a little
+            more confident than she walked in.
+          </p>
+        </div>
+      </section>
 
       <h2 className="font-display text-2xl text-joy-pink mb-8">
         Our Passionate Dance Educators

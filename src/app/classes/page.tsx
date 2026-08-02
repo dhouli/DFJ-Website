@@ -8,8 +8,16 @@ const ageGroups = [
       alt: "Pre-Ballet dancers in pink leotards at the barre",
     },
     classes: [
-      { name: "Pre-Ballet", desc: "TODO: rewrite from template copy" },
-      { name: "Try Tap & Hip Hop", desc: "TODO: rewrite from template copy" },
+      {
+        name: "Pre-Ballet",
+        ages: "Ages 3–5",
+        desc: "Little ones take their first steps into ballet through playful movement, imaginative storytelling, and gentle introductions to position and posture. It's less about perfect technique and more about coordination, listening skills, and building a lifelong love of dance.",
+      },
+      {
+        name: "Try Tap & Hip Hop",
+        ages: "Ages 3–4",
+        desc: "A fun first taste of two styles in one class. Dancers explore basic tap rhythms and hip hop moves side by side, building coordination and confidence while discovering which styles excite them most.",
+      },
     ],
   },
   {
@@ -19,21 +27,57 @@ const ageGroups = [
       alt: "Dancer stretching in an acro class",
     },
     classes: [
-      { name: "Ballet", desc: "TODO" },
-      { name: "Jazz", desc: "TODO" },
-      { name: "Tap", desc: "TODO" },
-      { name: "Acro", desc: "TODO" },
-      { name: "Hip Hop", desc: "TODO" },
-      { name: "Lyrical", desc: "TODO" },
+      {
+        name: "Ballet",
+        ages: "Ages 5+",
+        desc: "The foundation for nearly every style we teach. Dancers build strength, posture, and technique at a pace that respects where they are, with pathways into pre-pointe and pointe work as they progress. Ballet is required before joining Jazz, Lyrical, or Contemporary.",
+      },
+      {
+        name: "Jazz",
+        ages: "Ages 6–18",
+        desc: "Sharp, energetic choreography that blends technique with personality. Dancers build strength and musicality while learning to perform with confidence.",
+      },
+      {
+        name: "Tap",
+        ages: "Ages 5+",
+        desc: "Rhythm, timing, and percussion — with your feet as the instrument. Dancers build coordination while learning to make music as they move.",
+      },
+      {
+        name: "Hip Hop",
+        ages: "All Ages",
+        desc: "Street-style choreography set to music kids actually want to dance to. A high-energy class built around self-expression, rhythm, and having fun.",
+      },
+      {
+        name: "Acro",
+        ages: "Ages 6+",
+        desc: "A gymnastics-based class focused on strength, flexibility, and balance — handstands, cartwheels, and tumbling taught safely and progressively. Acro is a non-performance class and doesn't require ballet.",
+      },
+      {
+        name: "Lyrical",
+        ages: "Ages 7+",
+        desc: "Storytelling through movement. Dancers connect emotion, music, and technique, building on ballet and jazz fundamentals to dance with real expression. Ballet is required before joining Lyrical.",
+      },
     ],
   },
   {
     range: "Ages 10+",
     image: null,
     classes: [
-      { name: "Contemporary", desc: "TODO" },
-      { name: "Musical Theater", desc: "TODO" },
-      { name: "Pointe", desc: "TODO" },
+      {
+        name: "Contemporary",
+        ages: "Ages 10+",
+        desc: "An exploratory, expressive style blending technique from ballet, jazz, and modern dance. Dancers learn to move with intention and tell a story through their bodies. Ballet is required before joining Contemporary.",
+      },
+      {
+        name: "Musical Theater",
+        ages: "All Ages",
+        desc: "Singing, dancing, and acting come together in a class built for kids who love to perform. Dancers explore character work and stage presence while preparing numbers from classic and contemporary shows.",
+      },
+      {
+        name: "Pointe",
+        ages: "By Instructor Placement",
+        desc: "The next step for ballet dancers who've built the strength and technique to safely progress en pointe, working closely with our ballet faculty on placement, control, and artistry.",
+      },
     ],
   },
 ];
@@ -73,7 +117,10 @@ export default function ClassesPage() {
                 key={c.name}
                 className="rounded-xl border border-joy-blush p-6 bg-white hover:border-joy-cyan transition-colors"
               >
-                <h3 className="font-semibold mb-2">{c.name}</h3>
+                <h3 className="font-semibold">{c.name}</h3>
+                <p className="text-xs uppercase tracking-wide text-joy-pink font-semibold mb-2">
+                  {c.ages}
+                </p>
                 <p className="text-sm text-joy-charcoal/80">{c.desc}</p>
               </div>
             ))}
