@@ -31,6 +31,26 @@ export default function EventsPage() {
         </ol>
       </section>
 
+      <section className="mb-20">
+        <h2 className="font-display text-2xl text-joy-pink mb-4">
+          Watch Our Dancers
+        </h2>
+        <p className="max-w-2xl mb-6">
+          See Dance For Joy in action &mdash; real performances from our
+          recitals and showcases.
+        </p>
+        <div className="rounded-xl border border-joy-blush overflow-hidden">
+          <iframe
+            src="https://vimeo.com/showcase/9248516/embed"
+            width="100%"
+            height="480"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Dance For Joy highlight collection"
+          />
+        </div>
+      </section>
+
       <h2 className="font-display text-2xl text-joy-pink mb-6">
         Recent Recitals &amp; Showcases
       </h2>
