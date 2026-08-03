@@ -1,13 +1,24 @@
+import type { Metadata } from "next";
+import PageHeader from "@/components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Dance For Joy, Brielle NJ",
+  description:
+    "Reach Dance For Joy in Brielle, NJ by phone, email, or in person — questions about classes, enrollment, or our competitive company team welcome.",
+};
+
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="font-display text-4xl text-joy-plum mb-6">
-        Connect with Us for Your Dance Journey
-      </h1>
-      <p className="max-w-2xl mb-12">
-        Reach out for inquiries, class registrations, or any questions about
-        our dance programs.
-      </p>
+    <div>
+      <PageHeader
+        title="Connect with Us for Your Dance Journey"
+        subtitle="Reach out for inquiries, class registrations, or any questions about our dance programs."
+        image={{
+          src: "/images/picture14.jpg",
+          alt: "Sunlit yellow studio with barre and framed dance photography",
+        }}
+      />
+      <div className="mx-auto max-w-6xl px-6 py-16">
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <div>
@@ -34,6 +45,7 @@ export default function ContactPage() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
+      </div>
       </div>
     </div>
   );

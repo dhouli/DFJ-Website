@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
+
+export const metadata: Metadata = {
+  title: "Dance Classes in Brielle, NJ | Ballet, Tap, Jazz, Hip Hop & More",
+  description:
+    "Age-appropriate dance classes for ages 3 and up at Dance For Joy in Brielle, NJ — ballet, tap, jazz, hip hop, acro, lyrical, contemporary, and musical theater.",
+};
 
 const ageGroups = [
   {
@@ -66,7 +75,7 @@ const ageGroups = [
       {
         name: "Contemporary",
         ages: "Ages 10+",
-        desc: "An exploratory, expressive style blending technique from ballet, jazz, and modern dance. Dancers learn to move with intention and tell a story through their bodies. Ballet is required before joining Contemporary.",
+        desc: "A mindful warm-up infused with classic modern dance exercises and yoga-based movement builds strength, mobility, and alignment, followed by improvisational exploration that deepens the connection between mind and body. Floor work develops efficiency, fluidity, and grounded movement quality, and class concludes with a dynamic phrase that brings it all together with clarity and authenticity. Ballet is required before joining Contemporary.",
       },
       {
         name: "Musical Theater",
@@ -84,13 +93,26 @@ const ageGroups = [
 
 export default function ClassesPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="font-display text-4xl text-joy-plum mb-4">
-        Dance Classes for All Ages and Levels
-      </h1>
+    <div>
+      <PageHeader
+        title="Dance Classes for All Ages and Levels"
+        subtitle="Discover a world of movement and expression at Dance For Joy."
+        image={{
+          src: "/images/picture10.jpg",
+          alt: "Spacious studio with mirrored wall and viewing window",
+        }}
+      />
+      <div className="mx-auto max-w-6xl px-6 py-16">
       <p className="mb-12 max-w-2xl">
-        Discover a world of movement and expression at Dance For Joy. Browse
-        classes by age group below.
+        Browse classes by age group below. Looking for our competitive team?
+        Learn more about{" "}
+        <Link
+          href="/company"
+          className="text-joy-pink underline hover:text-joy-plum transition-colors"
+        >
+          Company
+        </Link>
+        .
       </p>
 
       {ageGroups.map((group) => (
@@ -127,6 +149,7 @@ export default function ClassesPage() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }

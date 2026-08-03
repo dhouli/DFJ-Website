@@ -1,16 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 import ScheduleTabs from "@/components/ScheduleTabs";
 import TuitionCalculator from "@/components/TuitionCalculator";
 import { tuitionRates, tuitionPolicies } from "@/data/schedule";
 
+export const metadata: Metadata = {
+  title: "Class Schedule, Tuition & Enrollment | Dance For Joy, Brielle NJ",
+  description:
+    "See our current class schedule, tuition rates, and enroll online at Dance For Joy, a dance studio in Brielle, NJ for ages 3 and up.",
+};
+
 export default function ScheduleEnrollmentPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="font-display text-4xl text-joy-plum mb-6">
-        Schedule &amp; Enrollment
-      </h1>
+    <div>
+      <PageHeader
+        title="Schedule & Enrollment"
+        subtitle="Everything you need to enroll: current class schedule and tuition."
+        image={{
+          src: "/images/IMG_0251-bridge.jpg",
+          alt: "Dancers lined up smiling on a wooden bridge surrounded by fall foliage",
+          position: "center 30%",
+        }}
+      />
+      <div className="mx-auto max-w-6xl px-6 py-16">
       <p className="max-w-2xl mb-12">
-        Everything you need to enroll: current class schedule and tuition.
         Looking for recital dates, auditions, or closures? Check our{" "}
         <Link
           href="/events"
@@ -18,7 +32,14 @@ export default function ScheduleEnrollmentPage() {
         >
           Events
         </Link>{" "}
-        calendar.
+        calendar. Not sure what to wear? See our{" "}
+        <Link
+          href="/dress-code"
+          className="text-joy-pink underline hover:text-joy-plum transition-colors"
+        >
+          Dress Code
+        </Link>
+        .
       </p>
 
       <section className="mb-20">
@@ -89,20 +110,11 @@ export default function ScheduleEnrollmentPage() {
         <h2 className="font-display text-2xl text-joy-pink mb-4">
           Ready to Register?
         </h2>
-        <p className="text-sm text-joy-charcoal/80 mb-2">
-          New to Dance For Joy?{" "}
-          <a
-            href="https://app.thestudiodirector.com/danceforjoynj/portal.sd?page=Register"
-            target="_blank"
-            rel="noreferrer"
-            className="text-joy-pink underline hover:text-joy-plum transition-colors font-semibold"
-          >
-            Register here.
-          </a>
-        </p>
         <p className="text-sm text-joy-charcoal/70 mb-6 max-w-2xl">
-          Please confirm your dancer&rsquo;s level and placement with Dance
-          For Joy before registering for a class.
+          New to Dance For Joy? Use the &ldquo;Click Here to Register&rdquo;
+          link inside the portal below to create an account. Please confirm
+          your dancer&rsquo;s level and placement with us before registering
+          for a class.
         </p>
 
         <div className="w-full h-[800px] rounded-xl border border-joy-blush overflow-hidden mb-4">
@@ -120,6 +132,7 @@ export default function ScheduleEnrollmentPage() {
           Having trouble? Call us at (732) 223-5336.
         </p>
       </section>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import { keyDates } from "@/data/schedule";
+import PageHeader from "@/components/PageHeader";
+import KeyDatesList from "@/components/KeyDatesList";
+
+export const metadata: Metadata = {
+  title: "Events & Key Dates | Dance For Joy, Brielle NJ",
+  description:
+    "Auditions, competitions, recitals, and studio closures at Dance For Joy in Brielle, NJ — all our key dates for the season in one place.",
+};
 
 const galleryPhotos = [
   { src: "/images/IMG_9057.jpg", alt: "Company dancers backstage in costume" },
@@ -9,26 +17,23 @@ const galleryPhotos = [
 
 export default function EventsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="font-display text-4xl text-joy-plum mb-6">Events</h1>
-      <p className="max-w-2xl mb-12">
-        Everything on the Dance For Joy calendar this season &mdash;
-        closures, auditions, competitions, and our spring recital &mdash; all
-        in one chronological place.
-      </p>
+    <div>
+      <PageHeader
+        title="Events"
+        subtitle="Everything on the Dance For Joy calendar this season — closures, auditions, competitions, and our spring recital, all in one place."
+        image={{
+          src: "/images/IMG_0896-group-faces.jpg",
+          alt: "The whole studio laughing together outdoors in matching flannel shirts",
+          position: "center 85%",
+        }}
+      />
+      <div className="mx-auto max-w-6xl px-6 py-16">
 
       <section className="mb-20">
         <h2 className="font-display text-2xl text-joy-pink mb-6">
           Key Dates 2026&ndash;2027
         </h2>
-        <ol className="border-l-2 border-joy-cyan pl-6 space-y-6">
-          {keyDates.map((k) => (
-            <li key={k.date + k.description}>
-              <p className="text-sm font-semibold text-joy-plum">{k.date}</p>
-              <p className="text-sm text-joy-charcoal/80">{k.description}</p>
-            </li>
-          ))}
-        </ol>
+        <KeyDatesList />
       </section>
 
       <section className="mb-20">
@@ -69,6 +74,7 @@ export default function EventsPage() {
             />
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

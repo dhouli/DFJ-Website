@@ -271,35 +271,52 @@ export const tuitionPolicies: string[] = [
   "Tuition excludes all built-in vacation days (based on a 29-week schedule). December tuition stays the same even though the studio is closed part of the month.",
 ];
 
+export type KeyDateCategory =
+  | "milestone"
+  | "audition"
+  | "competition"
+  | "performance"
+  | "closure";
+
 export interface KeyDate {
   date: string;
   description: string;
+  category: KeyDateCategory;
 }
 
+export const keyDateCategoryLabels: Record<KeyDateCategory, string> = {
+  milestone: "Studio",
+  audition: "Audition",
+  competition: "Competition",
+  performance: "Performance",
+  closure: "Closed",
+};
+
 export const keyDates: KeyDate[] = [
-  { date: "Sept 14", description: "Classes begin" },
-  { date: "Sept 19", description: "Christmas Show Auditions, 10am" },
-  { date: "Oct 12", description: "Closed" },
-  { date: "Oct 13–19", description: "Costume measurement week, costume deposits due" },
-  { date: "Oct 17", description: "Opening Number Auditions, show theme revealed, 10am" },
-  { date: "Oct 26–31", description: "Halloween dress-up week" },
-  { date: "Nov 25–28", description: "Closed, Thanksgiving break" },
-  { date: "Dec 5", description: "Last day of class before winter break" },
-  { date: "Dec 6", description: "Christmas Window Show dress rehearsal" },
-  { date: "Dec 7–12", description: "Christmas Window Show, 5–7pm each night" },
-  { date: "Dec 7–Jan 2", description: "Closed, winter break" },
-  { date: "Jan 4", description: "Classes resume" },
-  { date: "Jan 23", description: "POAL Student Choreography Auditions" },
-  { date: "Jan 29–31", description: "Dance Xplosion Competition (Company)" },
-  { date: "Feb 7", description: "POAL Performance at the Algonquin Theater, Manasquan" },
-  { date: "Feb 12–14", description: "Backstage Dance Competition (Company)" },
-  { date: "Feb 15", description: "Closed, Presidents Day" },
-  { date: "March 12–14", description: "NYCDA Convention (Company)" },
-  { date: "March", description: "DFJ Spirit Weeks / March Madness" },
-  { date: "March 25–April 2", description: "Closed, spring break" },
-  { date: "April 23–25", description: "Journey Dance Competition (Company)" },
-  { date: "May 17", description: "Last day of class for the season" },
-  { date: "May 18–20", description: "Dress rehearsal at the Strand Theater, Lakewood" },
-  { date: "May 22–23", description: "Recital / Show Time" },
-  { date: "May 26", description: "End-of-year picnic, Waterfront Park, Pt. Pleasant" },
+  { date: "Sept 14", description: "Classes begin", category: "milestone" },
+  { date: "Sept 19", description: "Christmas Show Auditions, 10am", category: "audition" },
+  { date: "Oct 12", description: "Closed", category: "closure" },
+  { date: "Oct 13–19", description: "Costume measurement week, costume deposits due", category: "milestone" },
+  { date: "Oct 17", description: "Opening Number Auditions, show theme revealed, 10am", category: "audition" },
+  { date: "Oct 26–31", description: "Halloween dress-up week", category: "milestone" },
+  { date: "Nov 25–28", description: "Closed, Thanksgiving break", category: "closure" },
+  { date: "Dec 5", description: "Last day of class before winter break", category: "milestone" },
+  { date: "Dec 6", description: "Christmas Window Show dress rehearsal", category: "performance" },
+  { date: "Dec 7–12", description: "Christmas Window Show, 5–7pm each night", category: "performance" },
+  { date: "Dec 7–Jan 2", description: "Closed, winter break", category: "closure" },
+  { date: "Jan 4", description: "Classes resume", category: "milestone" },
+  { date: "Jan 23", description: "POAL Student Choreography Auditions", category: "audition" },
+  { date: "Jan 29–31", description: "Dance Xplosion Competition (Company)", category: "competition" },
+  { date: "Feb 7", description: "POAL Performance at the Algonquin Theater, Manasquan", category: "performance" },
+  { date: "Feb 12–14", description: "Backstage Dance Competition (Company)", category: "competition" },
+  { date: "Feb 15", description: "Closed, Presidents Day", category: "closure" },
+  { date: "March 12–14", description: "NYCDA Convention (Company)", category: "competition" },
+  { date: "March", description: "DFJ Spirit Weeks / March Madness", category: "milestone" },
+  { date: "March 25–April 2", description: "Closed, spring break", category: "closure" },
+  { date: "April 23–25", description: "Journey Dance Competition (Company)", category: "competition" },
+  { date: "May 17", description: "Last day of class for the season", category: "milestone" },
+  { date: "May 18–20", description: "Dress rehearsal at the Strand Theater, Lakewood", category: "performance" },
+  { date: "May 22–23", description: "Recital / Show Time", category: "performance" },
+  { date: "May 26", description: "End-of-year picnic, Waterfront Park, Pt. Pleasant", category: "milestone" },
+  { date: "June", description: "Company auditions for the following season", category: "audition" },
 ];
