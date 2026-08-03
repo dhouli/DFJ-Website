@@ -6,7 +6,7 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Dance Classes in Brielle, NJ | Ballet, Tap, Jazz, Hip Hop & More",
   description:
-    "Age-appropriate dance classes for ages 3 and up at Dance For Joy in Brielle, NJ — ballet, tap, jazz, hip hop, acro, lyrical, contemporary, and musical theater.",
+    "Age-appropriate dance classes for ages 3 and up at Dance For Joy in Brielle, NJ — ballet, tap, jazz, hip hop, acro, lyrical, and contemporary.",
 };
 
 const ageGroups = [
@@ -21,11 +21,6 @@ const ageGroups = [
         name: "Pre-Ballet",
         ages: "Ages 3–5",
         desc: "Little ones take their first steps into ballet through playful movement, imaginative storytelling, and gentle introductions to position and posture. It's less about perfect technique and more about coordination, listening skills, and building a lifelong love of dance.",
-      },
-      {
-        name: "Try Tap & Hip Hop",
-        ages: "Ages 3–4",
-        desc: "A fun first taste of two styles in one class. Dancers explore basic tap rhythms and hip hop moves side by side, building coordination and confidence while discovering which styles excite them most.",
       },
     ],
   },
@@ -76,11 +71,6 @@ const ageGroups = [
         name: "Contemporary",
         ages: "Ages 10+",
         desc: "A mindful warm-up infused with classic modern dance exercises and yoga-based movement builds strength, mobility, and alignment, followed by improvisational exploration that deepens the connection between mind and body. Floor work develops efficiency, fluidity, and grounded movement quality, and class concludes with a dynamic phrase that brings it all together with clarity and authenticity. Ballet is required before joining Contemporary.",
-      },
-      {
-        name: "Musical Theater",
-        ages: "All Ages",
-        desc: "Singing, dancing, and acting come together in a class built for kids who love to perform. Dancers explore character work and stage presence while preparing numbers from classic and contemporary shows.",
       },
       {
         name: "Pointe",
