@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroVideo from "@/components/HeroVideo";
 import InstagramFeed from "@/components/InstagramFeed";
+import ShowHighlight from "@/components/ShowHighlight";
 
 const testimonials = [
   {
@@ -149,6 +150,20 @@ export default function Home() {
               doors and feel like you found your community.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Show Highlight */}
+      <section className="py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="font-display text-3xl text-joy-plum text-center mb-4">
+            Watch Our 2026 Spring Recital
+          </h2>
+          <p className="text-center max-w-xl mx-auto mb-10">
+            Our dancers took the stage for four incredible performances. Pick
+            a show below to watch the full recital.
+          </p>
+          <ShowHighlight />
         </div>
       </section>
 
