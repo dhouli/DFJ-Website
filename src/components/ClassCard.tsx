@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Props = {
@@ -21,7 +21,17 @@ export default function ClassCard({
   imagePosition,
 }: Props) {
   const [flipped, setFlipped] = useState(false);
+  const [canHover, setCanHover] = useState(false);
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    // Only mouse/trackpad devices report true hover support. Touch devices
+    // (including iOS/Android) never get the mouseenter/mouseleave handlers
+    // wired up below — otherwise mobile browsers treat the element as
+    // "hoverable" and swallow the first tap's click, requiring a second tap
+    // to actually flip the card.
+    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  }, []);
 
   const clearHoverTimeout = () => {
     if (hoverTimeout.current) {
@@ -43,8 +53,8 @@ export default function ClassCard({
   return (
     <div
       className="[perspective:1200px]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={canHover ? handleMouseEnter : undefined}
+      onMouseLeave={canHover ? handleMouseLeave : undefined}
       onClick={() => setFlipped((f) => !f)}
     >
       <div

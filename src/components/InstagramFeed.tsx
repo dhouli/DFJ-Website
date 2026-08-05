@@ -1,5 +1,7 @@
 "use client";
 
+import Script from "next/script";
+
 // Live Instagram feed via SnapWidget (connected to @danceforjoynj).
 // If this ever needs to be swapped out or reconnected, sign in at
 // snapwidget.com, grab the new embed URL, and update WIDGET_EMBED_URL below.
@@ -13,10 +15,13 @@ export default function InstagramFeed() {
         <iframe
           src={WIDGET_EMBED_URL}
           title="Posts from Instagram"
-          className="snapwidget-widget w-full"
-          height="510"
+          className="snapwidget-widget block w-full"
           style={{ border: "none", overflow: "hidden" }}
         />
+        {/* Lets SnapWidget resize the iframe to match its actual content
+            height at any screen width, instead of a fixed height that
+            leaves gaps or crops rows on smaller screens. */}
+        <Script src="https://snapwidget.com/js/snapwidget.js" strategy="lazyOnload" />
       </div>
     );
   }

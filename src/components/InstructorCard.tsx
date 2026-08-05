@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type Props = {
@@ -12,13 +12,23 @@ type Props = {
 
 export default function InstructorCard({ name, role, image, bio }: Props) {
   const [flipped, setFlipped] = useState(false);
+  const [canHover, setCanHover] = useState(false);
   const hasBio = Boolean(bio);
+
+  useEffect(() => {
+    // Only wire up hover-to-flip on real mouse/trackpad devices. On touch
+    // devices, having a mouseenter handler makes mobile browsers treat the
+    // card as "hoverable" and swallow the first tap's click, so it takes
+    // two taps to flip. Touch users get click-to-flip only, which works on
+    // the first tap.
+    setCanHover(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  }, []);
 
   return (
     <div
       className="[perspective:1200px]"
-      onMouseEnter={() => hasBio && setFlipped(true)}
-      onMouseLeave={() => hasBio && setFlipped(false)}
+      onMouseEnter={canHover && hasBio ? () => setFlipped(true) : undefined}
+      onMouseLeave={canHover && hasBio ? () => setFlipped(false) : undefined}
       onClick={() => hasBio && setFlipped((f) => !f)}
     >
       <div
