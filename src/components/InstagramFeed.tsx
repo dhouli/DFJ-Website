@@ -10,19 +10,26 @@ const WIDGET_EMBED_URL: string | null =
 
 export default function InstagramFeed() {
   if (WIDGET_EMBED_URL) {
+    // This matches SnapWidget's own recommended embed exactly: an iframe
+    // with the "snapwidget-widget" class and no fixed height, plus their
+    // script, which finds that class on the page and actively resizes the
+    // iframe to match its real content at the current screen width. The
+    // 400px height here is only a starting point before the script runs
+    // on first paint — it gets overridden immediately after.
     return (
-      <div className="rounded-xl border border-joy-blush overflow-hidden">
+      <>
         <iframe
           src={WIDGET_EMBED_URL}
           title="Posts from Instagram"
           className="snapwidget-widget block w-full"
+          height={400}
           style={{ border: "none", overflow: "hidden" }}
         />
-        {/* Lets SnapWidget resize the iframe to match its actual content
-            height at any screen width, instead of a fixed height that
-            leaves gaps or crops rows on smaller screens. */}
-        <Script src="https://snapwidget.com/js/snapwidget.js" strategy="lazyOnload" />
-      </div>
+        <Script
+          src="https://snapwidget.com/js/snapwidget.js"
+          strategy="afterInteractive"
+        />
+      </>
     );
   }
 
