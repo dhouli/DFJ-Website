@@ -2,6 +2,27 @@
 
 Things that don't block launch but need Kim's input eventually.
 
+## Full site audit — Aug 6, 2026
+
+Went through every page on production (danceforjoynj.com), checked for broken images, console
+errors, and broken links (none found), and read through content for accuracy against what's
+already tracked below. Two real findings, plus the known open items below are all still open:
+
+1. **Homepage Instagram feed shows blank** — the fix is committed locally but hasn't been pushed
+   yet. Push `main` and it'll show real photos again.
+2. **Events page still shows the old 2015–2021 highlight reel** (`src/app/events/page.tsx`,
+   "Watch Our Dancers" section) — worth swapping for the same 2026 recital links now on the
+   homepage (`ShowHighlight` component) so the two pages are consistent and current.
+3. **404 page is the plain Next.js default** — no site header/footer, no "Back to Home" link.
+   Minor polish item, low priority.
+
+Everything else — every page's layout, images, forms (registration portal, contact form, Google
+Map), and footer links — checked out clean on desktop. Mobile couldn't be re-verified with a
+fresh screenshot this session (viewport resizing wasn't cooperating in the browser tool), but the
+mobile-specific issues raised earlier (hamburger nav, flip-card tap behavior, Instagram feed
+sizing) were already tested and fixed directly — worth a quick spot-check on an actual phone as
+final confirmation.
+
 ## Getting found & growing enrollment
 
 Kim wants Dance For Joy to come up (and win) when people search "dance studio near me" /
