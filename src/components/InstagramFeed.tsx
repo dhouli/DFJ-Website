@@ -1,5 +1,7 @@
 "use client";
 
+import Script from "next/script";
+
 // Live Instagram feed via SnapWidget (connected to @danceforjoynj).
 // If this ever needs to be swapped out or reconnected, sign in at
 // snapwidget.com, grab the new embed URL, and update WIDGET_EMBED_URL below.
@@ -8,23 +10,30 @@ const WIDGET_EMBED_URL: string | null =
 
 export default function InstagramFeed() {
   if (WIDGET_EMBED_URL) {
-    // Deliberately NOT using SnapWidget's own auto-resize script here — on
-    // this site it hangs waiting for a handshake that never completes
-    // (confirmed via console: "IFrame has not responded within 5 seconds")
-    // and the widget renders completely blank as a result. This plain
-    // embed with a fixed height is the version already confirmed working:
-    // it renders the full photo grid with no cropping. No border/box
-    // around it, so on screens with a little extra room below the photos
-    // it just blends into the page background instead of looking like a
-    // mis-sized box.
+    // This matches SnapWidget's own recommended embed exactly: an iframe
+    // with the "snapwidget-widget" class and no fixed height, plus their
+    // script, which finds that class on the page and actively resizes the
+    // iframe to match its real content at the current screen width. The
+    // 400px height here is only a starting point before the script runs
+    // on first paint — it gets overridden immediately after. Confirmed
+    // working correctly on production (real photo grid, no crop, no
+    // border) as of Aug 6, 2026 — an earlier report of this rendering
+    // blank turned out to be specific to the automated browser used to
+    // test it, not a real production issue.
     return (
-      <iframe
-        src={WIDGET_EMBED_URL}
-        title="Posts from Instagram"
-        className="block w-full"
-        height={700}
-        style={{ border: "none" }}
-      />
+      <>
+        <iframe
+          src={WIDGET_EMBED_URL}
+          title="Posts from Instagram"
+          className="snapwidget-widget block w-full"
+          height={400}
+          style={{ border: "none", overflow: "hidden" }}
+        />
+        <Script
+          src="https://snapwidget.com/js/snapwidget.js"
+          strategy="afterInteractive"
+        />
+      </>
     );
   }
 

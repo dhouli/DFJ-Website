@@ -6,14 +6,20 @@ Things that don't block launch but need Kim's input eventually.
 
 Went through every page on production (danceforjoynj.com), checked for broken images, console
 errors, and broken links (none found), and read through content for accuracy against what's
-already tracked below. Two real findings, plus the known open items below are all still open:
+already tracked below.
 
-1. **Homepage Instagram feed shows blank** — the fix is committed locally but hasn't been pushed
-   yet. Push `main` and it'll show real photos again.
-2. **Events page still shows the old 2015–2021 highlight reel** (`src/app/events/page.tsx`,
+Note: initial automated testing flagged the homepage Instagram feed as rendering blank on
+production. That turned out to be a false alarm specific to the automated browser used to check
+it (likely blocking SnapWidget's third-party script) — Kim confirmed via a real screenshot that
+it displays correctly for actual visitors. No fix needed there; `InstagramFeed.tsx` is back to
+matching what's live.
+
+Two real findings still open:
+
+1. **Events page still shows the old 2015–2021 highlight reel** (`src/app/events/page.tsx`,
    "Watch Our Dancers" section) — worth swapping for the same 2026 recital links now on the
    homepage (`ShowHighlight` component) so the two pages are consistent and current.
-3. **404 page is the plain Next.js default** — no site header/footer, no "Back to Home" link.
+2. **404 page is the plain Next.js default** — no site header/footer, no "Back to Home" link.
    Minor polish item, low priority.
 
 Everything else — every page's layout, images, forms (registration portal, contact form, Google
